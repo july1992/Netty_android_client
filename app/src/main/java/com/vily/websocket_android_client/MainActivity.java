@@ -30,8 +30,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView mIv_connect_state;
     private EditText mEt_leapId;
     private Button mBtn_bind_server;
-    private Button mBtn_bind_mesh;
-    private EditText mEt_send_content;
+
+
     private TextView mTv_commond;
     private JWebSocketClient mJWebSocketClient;
 
@@ -56,8 +56,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mIv_connect_state = findViewById(R.id.iv_connect_state);
         mEt_leapId = findViewById(R.id.et_leapId);
         mBtn_bind_server = findViewById(R.id.btn_bind_server);
-        mBtn_bind_mesh = findViewById(R.id.btn_bind_mesh);
-        mEt_send_content = findViewById(R.id.et_send_content);
+
         mTv_commond = findViewById(R.id.tv_commond);
     }
 
@@ -65,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void initData() {
         mBtn_connect_server.setOnClickListener(this);
         mBtn_bind_server.setOnClickListener(this);
-        mBtn_bind_mesh.setOnClickListener(this);
+
     }
 
     private void initListener() {
@@ -126,8 +125,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 break;
 
-            case R.id.btn_bind_mesh :
-                break;
 
         }
     }
