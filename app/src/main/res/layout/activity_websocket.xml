@@ -51,11 +51,11 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical">
-       <Button
-           android:id="@+id/btn_connect_server"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="连接服务器"/>
+        <Button
+            android:id="@+id/btn_connect_server"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="连接服务器"/>
 
         <ImageView
             android:id="@+id/iv_connect_state"
@@ -65,43 +65,6 @@
             android:background="@drawable/drawable_connect_state"
 
             />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="设置 leapId："/>
-
-        <EditText
-            android:id="@+id/et_leapId"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:hint="输入客户端 leapId"
-            android:inputType="number"/>
-
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <Button
-            android:id="@+id/btn_bind_server"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:text="绑定leapId到服务端"/>
-
-
     </LinearLayout>
 
 

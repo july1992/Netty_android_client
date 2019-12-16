@@ -30,6 +30,12 @@ dependencies {
     implementation 'org.java-websocket:Java-WebSocket:1.4.0'
 
     // 解析
-    implementation 'com.alibaba:fastjson:1.2.55'
-    implementation 'com.alibaba:fastjson:1.2.55.android'
+    implementation 'com.alibaba:fastjson:1.2.61'
+    implementation 'com.alibaba:fastjson:1.1.71.android'
+
+
+    implementation 'com.google.code.gson:gson:2.8.6'
+
+    implementation 'io.netty:netty-all:4.1.32.Final'
+
 }
