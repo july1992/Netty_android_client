@@ -21,6 +21,8 @@
         </activity>
         <activity android:name=".WebSocketClientActivity" />
         <activity android:name=".NettyClientActivity" />
+        <activity android:name=".SocketIOActivity" />
+        <activity android:name=".SocketIO2Activity" />
     </application>
 
 </manifest>

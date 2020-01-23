@@ -38,4 +38,10 @@ dependencies {
 
     implementation 'io.netty:netty-all:4.1.32.Final'
 
+
+    implementation ('io.socket:socket.io-client:1.0.0'){
+        // excluding org.json which is provided by Android
+        exclude group: 'org.json', module: 'json'
+    }
+
 }

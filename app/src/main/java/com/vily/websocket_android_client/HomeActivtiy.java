@@ -33,4 +33,9 @@ public class HomeActivtiy extends AppCompatActivity {
         Intent intent=new Intent(HomeActivtiy.this,WebSocketClientActivity.class);
         startActivity(intent);
     }
+
+    public void tosocketio(View view) {
+        Intent intent=new Intent(HomeActivtiy.this,SocketIO2Activity.class);
+        startActivity(intent);
+    }
 }

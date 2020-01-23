@@ -19,10 +19,14 @@ import io.netty.channel.ChannelPipeline;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
+import io.netty.handler.codec.http.HttpClientCodec;
+import io.netty.handler.codec.http.HttpContentDecompressor;
+import io.netty.handler.codec.http.HttpObjectAggregator;
 import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
 import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
 import io.netty.handler.stream.ChunkedWriteHandler;
+
 
 /**
  * author : Gecx
@@ -69,19 +73,25 @@ public class NettyClient {
                             pipeline.addLast(new StringDecoder());
                             pipeline.addLast(new StringEncoder());
                             pipeline.addLast(new ChunkedWriteHandler());
+
+//                            pipeline.addLast(new HttpClientCodec());
+//                            pipeline.addLast(new HttpObjectAggregator(65536));
+//                            pipeline.addLast(new HttpContentDecompressor());
                             pipeline.addLast(new ChannelHandle());
                         }
                     });
+
             mChannelFuture = bootstrap.connect(ip, Integer.parseInt(port))
                     .addListener(new ChannelFutureListener() {
                         @Override
                         public void operationComplete(ChannelFuture future) {
+
                             if (future.isSuccess()) {
                                 Log.i(TAG, "client connect success");
                                 socketChannel = future.channel();
                                 if (socketChannel != null) {
                                     Gson gson = new Gson();
-                                    socketChannel.writeAndFlush(gson.toJson(new PaketData(1, 2, Type.BIND_SERVER)));
+                                    socketChannel.writeAndFlush("连接上");
                                 }
                             } else {
                                 future.channel().close();
@@ -152,13 +162,13 @@ public class NettyClient {
 
         if (socketChannel != null) {
             Log.i(TAG, "send: ------");
-            Gson gson = new Gson();
 
-            socketChannel.writeAndFlush(gson.toJson(new PaketData(1, 2, Type.BIND_SERVER)));
+            socketChannel.writeAndFlush("ssssss");
         }
     }
 
     public void close() {
+
         if (socketChannel != null) {
             socketChannel.close();
             socketChannel = null;

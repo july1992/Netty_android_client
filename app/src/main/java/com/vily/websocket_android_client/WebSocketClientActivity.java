@@ -83,7 +83,7 @@ public class WebSocketClientActivity extends AppCompatActivity implements View.O
 
                 String ip = mEt_ip.getText().toString().trim();
                 String port = mPort.getText().toString().trim();
-                URI uri = URI.create("ws://"+ip+":"+port+"/ws");
+                URI uri = URI.create("ws://"+ip+":"+port);
 
 
 

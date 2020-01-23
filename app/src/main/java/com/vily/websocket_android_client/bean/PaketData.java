@@ -10,56 +10,43 @@ import java.io.Serializable;
  **/
 public class PaketData implements Serializable {
 
-    private int fromId;
+    private Byte type;//消息类型
 
-    private int toId;
+    private int id;
 
-    private byte type;
+    private String state;
 
-    public PaketData() {
-    }
-
-    public PaketData(int fromId, int toId, byte type) {
-        this.fromId = fromId;
-        this.toId = toId;
-        this.type = type;
-    }
-
-    public PaketData(int fromId, int toId) {
-        this.fromId = fromId;
-        this.toId = toId;
-    }
-
-    public int getFromId() {
-        return fromId;
-    }
-
-    public void setFromId(int fromId) {
-        this.fromId = fromId;
-    }
-
-    public int getToId() {
-        return toId;
-    }
-
-    public void setToId(int toId) {
-        this.toId = toId;
-    }
-
-    public byte getType() {
+    public Byte getType() {
         return type;
     }
 
-    public void setType(byte type) {
+    public void setType(Byte type) {
         this.type = type;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
     }
 
     @Override
     public String toString() {
         return "PaketData{" +
-                "fromId=" + fromId +
-                ", toId=" + toId +
-                ", type=" + type +
+                "type=" + type +
+                ", id=" + id +
+                ", state='" + state + '\'' +
                 '}';
     }
+
 }
