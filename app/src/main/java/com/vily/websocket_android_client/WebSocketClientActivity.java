@@ -83,28 +83,36 @@ public class WebSocketClientActivity extends AppCompatActivity implements View.O
 
                 String ip = mEt_ip.getText().toString().trim();
                 String port = mPort.getText().toString().trim();
-                URI uri = URI.create("ws://"+ip+":"+port);
-
-
+                URI uri = URI.create("ws://"+ip+":"+port+"/ws");
 
                 mJWebSocketClient = new JWebSocketClient(uri) {
                     @Override
                     public void onMessage(final String message) {
                         //message就是接收到的消息
                         Log.i(TAG, "onMessage: ----:"+message);
-
                     }
 
                     @Override
                     public void onOpen(ServerHandshake handshakedata) {
                         Log.i(TAG, "onOpen: -----:");
-                       mIv_connect_state.setSelected(true);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                mIv_connect_state.setSelected(true);
+                            }
+                        });
+
                     }
 
                     @Override
                     public void onClose(int code, String reason, boolean remote) {
                         Log.i(TAG, "onClose: ----:");
-                        mIv_connect_state.setSelected(false);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                mIv_connect_state.setSelected(false);
+                            }
+                        });
                     }
                 };
 
